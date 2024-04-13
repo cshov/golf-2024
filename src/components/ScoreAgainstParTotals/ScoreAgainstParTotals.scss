@@ -1,0 +1,38 @@
+.table-wrapper {
+  width: 100%;
+}
+
+
+table.offset-totals {
+
+  //width: 100%;
+  margin: 0 auto;
+
+  border: 1px solid #999;
+
+
+  tr {
+    display: flex;
+    gap: 24px;
+    border-bottom: 1px solid #999;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+
+    th {
+      text-align: right;
+    }
+
+    td {
+      text-align: left;
+    }
+
+    th, td {
+      color: #fff;
+      flex: 1;
+
+    }
+  }
+}

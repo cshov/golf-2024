@@ -1,0 +1,66 @@
+.round-container {
+  display: flex;
+  flex-direction: column;
+}
+.round-container h2 {
+  color: #fff;
+  font-size: 24px;
+}
+
+.score-grid {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  border: 2px solid #fff;
+}
+.score-grid .hole-info {
+  display: flex;
+  flex-direction: column;
+}
+.score-grid .front-nine, .score-grid .back-nine, .score-grid .total {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  width: 48px;
+  text-align: center;
+}
+.score-grid .front-nine .hole-number, .score-grid .front-nine .hole-score, .score-grid .back-nine .hole-number, .score-grid .back-nine .hole-score, .score-grid .total .hole-number, .score-grid .total .hole-score {
+  margin: 0 auto;
+  width: 48px;
+}
+.score-grid .front-nine, .score-grid .back-nine {
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.hole-number {
+  display: block;
+  height: 24px;
+  width: 24px;
+  border-bottom: 2px solid #fff;
+  font-size: 16px;
+  color: #fff;
+}
+
+.hole-score {
+  display: block;
+  height: 24px;
+  width: 24px;
+  font-size: 16px;
+  color: #fff;
+}
+.hole-score.birdie {
+  background-color: lime;
+  color: #000;
+}
+.hole-score.bogey {
+  background-color: red;
+}
+.hole-score.double {
+  background-color: #a61f1f;
+}
+.hole-score.triple {
+  background-color: #4b1f1f;
+}
+
+/*# sourceMappingURL=Round.css.map */

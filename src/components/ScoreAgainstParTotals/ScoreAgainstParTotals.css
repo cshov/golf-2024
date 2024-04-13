@@ -1,0 +1,28 @@
+.table-wrapper {
+  width: 100%;
+}
+
+table.offset-totals {
+  margin: 0 auto;
+  border: 1px solid #999;
+}
+table.offset-totals tr {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #999;
+}
+table.offset-totals tr:last-child {
+  border-bottom: none;
+}
+table.offset-totals tr th {
+  text-align: right;
+}
+table.offset-totals tr td {
+  text-align: left;
+}
+table.offset-totals tr th, table.offset-totals tr td {
+  color: #fff;
+  flex: 1;
+}
+
+/*# sourceMappingURL=ScoreAgainstParTotals.css.map */
