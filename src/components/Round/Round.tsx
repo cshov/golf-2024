@@ -7,7 +7,7 @@ function Round(props: {roundData: RoundData}) {
 
     const scoreStrings = getStringsForScoresForRound(props.roundData);
 
-    console.log(props.roundData.scoresByHole)
+    // console.log(props.roundData.scoresByHole)
 
     return (
         <div className="round-container">
@@ -45,7 +45,6 @@ function Round(props: {roundData: RoundData}) {
                     <span className={"hole-number"}>TOT</span>
                     <span className={`hole-score`}>{props.roundData.roundTotal}</span>
                 </div>
-
 
             </div>
 

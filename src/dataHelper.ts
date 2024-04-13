@@ -2,22 +2,19 @@ import rounds from "./data/scores.json";
 import {RoundData} from "./models/golf-data.model";
 
 export function getRounds(): RoundData[] {
-    return [...rounds];
+    return Object.assign([], rounds);
 }
 
 export function getTransformedRounds(): RoundData[] {
-    const roundsOG = getRounds();
+    const roundsOG = [...getRounds()];
 
     return roundsOG.map(round => {
-
-        const frontNine = round.scoresByHole.slice(0,9).reduce((acc,cur) => {
+        const frontNine = [...round.scoresByHole].slice(0,9).reduce((acc,cur) => {
             return acc + cur;
         });
-
-        const backNine = round.scoresByHole.slice(9,18).reduce((acc,cur) => {
+        const backNine = [...round.scoresByHole].slice(9,18).reduce((acc,cur) => {
             return acc + cur;
         });
-
 
         return {
             ...round,
@@ -37,26 +34,16 @@ export function getRoundScores(): number[] {
 }
 
 export function bestScoresPerHole(): number[] {
-    const golfData: RoundData[] = [...rounds];
-    let bestScores: number[] = [];
+    const golfData: RoundData[] = [...getRounds()];
+    let bestScores: number[] = [99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99,99];
 
     golfData.forEach((round) => {
-        if (bestScores.length === 0) {
-            bestScores = round.scoresByHole;
-            // first round was 12 holes. so hafta add dummy data for that round
-            const holesAdded = bestScores.length;
-            const holesMissing = 18 - holesAdded;
-
-            for (let i = 0; i < holesMissing; i += 1) {
-                bestScores.push(99);
+        const clonedRound = Object.assign({}, round);
+        clonedRound.scoresByHole.forEach((hole, index) => {
+            if (hole && hole < bestScores[index]) {
+                bestScores[index] = hole;
             }
-        } else {
-            round.scoresByHole.forEach((hole, index) => {
-                if (hole < bestScores[index]) {
-                    bestScores[index] = hole;
-                }
-            })
-        }
+        })
     });
 
     return bestScores;
@@ -181,7 +168,7 @@ export function getScoreOffsetsForRound(round: RoundData): number[] {
 }
 
 export function getAverageScoresPerHole(): number[] {
-    const rounds = getTransformedRounds();
+    const rounds = [...getTransformedRounds()];
 
     const holesAndScoresArray: number[][] = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 
@@ -195,7 +182,7 @@ export function getAverageScoresPerHole(): number[] {
 }
 
 export function getStandardDeviationsPerHole(): number[] {
-    const rounds = getTransformedRounds();
+    const rounds = [...getTransformedRounds()];
 
     const holesAndScoresArray: number[][] = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 

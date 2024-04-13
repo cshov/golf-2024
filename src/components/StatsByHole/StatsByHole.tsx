@@ -5,7 +5,7 @@ function StatsByHole() {
 
     const avgScoresPerHole = getAverageScoresPerHole();
     const standardDevs = getStandardDeviationsPerHole();
-    const bestScores = bestScoresPerHole();
+    const bestScores = [...bestScoresPerHole()];
 
     return (
         <div className={"stat-table-container"}>
