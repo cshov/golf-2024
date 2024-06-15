@@ -3,7 +3,7 @@ import {getScoreName, getStringsForScoresForRound} from "../../dataHelper";
 import './Round.css';
 
 function Round(props: {roundData: RoundData}) {
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     const scoreStrings = getStringsForScoresForRound(props.roundData);
 

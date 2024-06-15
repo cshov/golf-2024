@@ -49,18 +49,22 @@
   font-size: 16px;
   color: #fff;
 }
+.hole-score.eagle {
+  background-color: #87ff87;
+  color: #000;
+}
 .hole-score.birdie {
-  background-color: lime;
+  background-color: #1cb91c;
   color: #000;
 }
 .hole-score.bogey {
-  background-color: red;
+  background-color: #0048ff;
 }
 .hole-score.double {
-  background-color: #a61f1f;
+  background-color: #002c96;
 }
 .hole-score.triple {
-  background-color: #4b1f1f;
+  background-color: #001350;
 }
 
 /*# sourceMappingURL=Round.css.map */

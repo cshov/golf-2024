@@ -63,27 +63,32 @@
   color: #fff;
 
 
+  &.eagle {
+    background-color: #87ff87;
+    color: #000;
+    //border: 2px solid #00ff00;
+  }
 
   &.birdie {
-    background-color: lime;
+    background-color: #1cb91c;
     color: #000;
     //border: 2px solid #00ff00;
   }
 
   &.bogey {
-    background-color: red;
+    background-color: #0048ff;
     //color: #000;
     //border: 2px solid #ff0000;
   }
 
   &.double {
-    background-color: #a61f1f;
+    background-color: #002c96;
     //color: #000;
     //border: 2px solid #ff0000;
   }
 
   &.triple {
-    background-color: #4b1f1f;
+    background-color: #001350;
     //color: #000;
     //border: 2px solid #ff0000;
   }

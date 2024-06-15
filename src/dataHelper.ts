@@ -65,6 +65,22 @@ export function getTheHolesBirdied(): number[] {
     return Array.from(new Set(arrayOfHolesBirdiedWithDupes)).sort((a,b) => a-b);
 }
 
+export function getTheHolesEagled(): number[] {
+    const rounds = getTransformedRounds();
+
+    const arrayOfHolesBirdiedWithDupes: number[] = [];
+
+    rounds.forEach((round) => {
+        round.scoreOffsetsByHole?.forEach((offset, index) => {
+            if (offset === -2) {
+                arrayOfHolesBirdiedWithDupes.push(index+1);
+            }
+        })
+    });
+
+    return Array.from(new Set(arrayOfHolesBirdiedWithDupes)).sort((a,b) => a-b);
+}
+
 export function getStringsForBestScoresPerHole(): string[] {
     const pars = getPars();
     const bestScores = bestScoresPerHole();

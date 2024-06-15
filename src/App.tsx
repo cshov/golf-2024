@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {
-    getTheHolesBirdied,
+    getTheHolesBirdied, getTheHolesEagled,
     getTransformedRounds
 } from "./dataHelper"
 import Round from "./components/Round/Round";
@@ -21,6 +21,7 @@ function App() {
 
             <div className={"app-body"}>
                 <p>Holes birdied: {getTheHolesBirdied().join(',')}</p>
+                <p>Holes eagled: {getTheHolesEagled().join(',')}</p>
                 <StatsByHole/>
                 {/*<img src={logo} className="App-logo" alt="logo" />*/}
                 {/*<p>*/}
